@@ -14,7 +14,7 @@ class AddForeignKeysToModels < ActiveRecord::Migration
     remove_column :items, :i_owe_you_id
     remove_column :users, :profile_id
     remove_column :supporting_documents, :item_id
-    remove_column :i_owe_yous, :creator_id
+    remove_column :i_owe_yous, :initiator_id
     remove_column :i_owe_yous, :recipient_id
     remove_column :transactions, :initiator_id
     remove_column :transactions, :recipient_id
