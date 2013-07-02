@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  category: MyString
+  fulfilled: false
+  original_balance: 9.99
+  current_balance: 9.99
+  date_fulfilled: 2013-07-01 23:21:35
+
+two:
+  name: MyString
+  description: MyText
+  category: MyString
+  fulfilled: false
+  original_balance: 9.99
+  current_balance: 9.99
+  date_fulfilled: 2013-07-01 23:21:35

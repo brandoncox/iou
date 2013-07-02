@@ -1,0 +1,2 @@
+class SupportingDocumentsController < ApplicationController
+end
