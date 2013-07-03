@@ -3,7 +3,7 @@ class AddForeignKeysToModels < ActiveRecord::Migration
     add_column :items, :i_owe_you_id, :integer
     add_column :users, :profile_id, :integer
     add_column :supporting_documents, :item_id, :integer
-    add_column :i_owe_yous, :creator_id, :integer
+    add_column :i_owe_yous, :initiator_id, :integer
     add_column :i_owe_yous, :recipient_id, :integer
     add_column :transactions, :initiator_id, :integer
     add_column :transactions, :i_owe_you_id, :integer
