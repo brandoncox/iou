@@ -1,29 +1,25 @@
 class IOweYousController < ApplicationController
   def index
-    
+    @i_owe_yous = current_user.i_owe_yous.where(fulfilled: true)
   end
   
   def new
-    @ioweyou = IOweYou.new
+    @i_owe_you = IOweYou.new
   end
   
   def create
-    
+    current_user.i_owe_yous.create(params[:i_owe_you])
   end
   
   def edit
-    
+    @i_owe_you = IOweYou.find(params[:id])
   end
   
   def update
-    
-  end
-  
-  def destoy
-    
+    @i_owe_you = IOweYou.update_attributes(params[:i_owe_you])
   end
   
   def show
-    @ioweyou = IOweYou.find(params[:id])
+    @i_owe_you = IOweYou.find(params[:id])
   end
 end

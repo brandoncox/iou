@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ServicesControllerTest < ActionController::TestCase
+class FavorTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

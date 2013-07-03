@@ -9,23 +9,16 @@ class BillsController < ApplicationController
   end
   
   def create
-    
-  end
-  
-  def edit
-    
+    current_user.i_owe_yous.last.items << @bill.item
   end
   
   def update
-    
+    render json: Bill.find(params[:id])
   end
-  
-  def destoy
-    
-  end
+
   
   def show
-    @bill = Bill.find(params[:id])
+    render json: Bill.find(params[:id])
   end
   
 end

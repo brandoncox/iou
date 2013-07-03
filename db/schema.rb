@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130702211645) do
+ActiveRecord::Schema.define(:version => 20130703031149) do
 
   create_table "bills", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(:version => 20130702211645) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "favors", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "goods", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -41,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20130702211645) do
   create_table "i_owe_yous", :force => true do |t|
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.integer  "creator_id"
+    t.integer  "initiator_id"
     t.integer  "recipient_id"
   end
 
@@ -90,11 +95,6 @@ ActiveRecord::Schema.define(:version => 20130702211645) do
     t.datetime "updated_at",          :null => false
   end
 
-  create_table "services", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "sources", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -117,10 +117,9 @@ ActiveRecord::Schema.define(:version => 20130702211645) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "username"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "email",                  :default => "", :null => false
+    t.string   "username",               :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -133,7 +132,7 @@ ActiveRecord::Schema.define(:version => 20130702211645) do
     t.integer  "profile_id"
   end
 
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["username"], :name => "index_users_on_username", :unique => true
 
 end
